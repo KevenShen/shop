@@ -1,0 +1,71 @@
+<?php
+namespace DummyNamespace;
+ 
+ 
+class DummyClass
+{
+    private $reposity;
+
+    /*
+    *    将需要使用的Reposity通过构造函数实例化
+    */
+    public function __construct ()
+    {
+        $this->reposity=;
+    }
+
+    public function all()
+	{
+		return array();
+	}
+
+	public function detail()
+	{
+		return array();
+	}
+
+    public function get()
+    {
+
+    }
+
+    public function create()
+    {
+        
+    }
+
+    public function update()
+    {
+
+    }
+
+    public function delete()
+    {
+
+    }
+
+    public function listing()
+    {
+
+    }
+
+    public function delisting()
+    {
+
+    }
+
+    public function search()
+    {
+
+    }
+
+    public function getInventory()
+    {
+
+    }
+
+    public function getOnsale()
+    {
+        
+    }
+}

@@ -1,0 +1,46 @@
+<?php
+namespace DummyNamespace;
+ 
+ 
+class DummyClass
+{
+    private model;
+    /*
+    *    将需要使用的Model通过构造函数实例化
+    */
+    public function __construct ()
+    {
+        $this->model=;
+    }
+    public function find($id, $columns = array('*'))
+	{
+        return $this->model::find($id, $columns);
+	}
+    public function findBy($field, $value, $columns = array('*'))
+	{
+        
+	}
+    public function all($columns = array('*'))
+	{
+        return $this->model::get($columns)->toArray();
+	}
+    public function paginate($perPage = 15, $columns = array('*'))
+	{
+        return $this->model::paginate($perPage);
+	}
+    public function create(array $data)
+	{
+        return $this->model::create($data);
+	}
+    public function update(array $data, $id)
+	{
+        if($id){
+            return $this->model::update($data);
+        }
+        return $this->model::where('user_id',$id)->update($data);
+	}
+ 	public function delete($id)
+	{
+        return $this->model::destroy($id);
+	}
+}

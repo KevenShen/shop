@@ -1,0 +1,205 @@
+<?php
+
+namespace App\Repositories\Category;
+
+use \Illuminate\Support\Facades\Cache;
+use App\Models\Category;
+use Illuminate\Support\Facades\Storage;
+
+class CategoryRepository
+{
+    private $model;
+    const path = CollectionMedia;
+    public function __construct(Category $category)
+    {
+        $this->model = $category;
+    }
+    public function allTree()
+    {
+        $category_Tree = Cache::store('file')->get('category_Tree');
+        if (empty($category_Tree)) {
+            $category_Tree = $this->custongetTree(0);
+            Cache::store('file')->put('category_Tree', $category_Tree, 6000);
+        }
+        Cache::forget('category_Tree');
+        return $category_Tree;
+    }
+    public function allCategory($columns = '*', $field = NULL)
+    {
+        return $this->model::select(checkColumns($columns))->where(str2arr($field))->get()->toArray();
+    }
+    public function paginate($size = 10, $page = 1, $columns = '*', $field = NULL)
+    {
+        $col = checkColumns($columns);
+        $where = str2arr($field);
+        return $this->model::select($col)->where($where)->paginate($size);
+    }
+    public function find($id, $columns = '*')
+    {
+        return $this->model::select(checkColumns($columns))->find($id);
+    }
+    public function findBy($otherKey, $columns = '*', $field = NULL)
+    {
+        $otherKeyArr = str2arr($otherKey);
+        $field = str2arr($field);
+        return $this->model::select(checkColumns($columns))->where(array_merge($otherKeyArr, $field))->get()->toArray();
+    }
+    public function create(array $data)
+    {
+        foreach ($data as $key => $value) {
+            if (is_object($value)) {
+                $data[$key] =  fileterUpload(Storage::putFile(self::path, $value), true);
+            }
+        }
+        $data['cat_link'] = cat_nameTo_ink($data['cat_name']);
+        $result = $this->model::create($data);
+        $category_Tree = Cache::store('file')->get('category_Tree');
+        if (!empty($category_Tree)) {
+            if ($result['parent_id'] == 0) {
+                array_push($category_Tree, $result);
+            } else {
+                // foreach ($category_Tree as $key => $value) {
+                //     if ($value['parent_id' == $result['parent_id']]) {
+                //     }
+                // }
+            }
+        }
+        Cache::store('file')->put('category_Tree', $category_Tree, 6000);
+        return $result;
+    }
+    // private function arr_foreach_tree($arr)
+    // {
+    //     if (!is_array($arr)) {
+    //         return false;
+    //     }
+    //     foreach ($arr as $key => $value) {
+    //         if($value['id'])
+    //         // if(!empty($arr['children'])&&is_array())
+    //     }
+    // }
+
+    public function update(array $data, $id)
+    {
+        $temps = $this->model::where('id', $id)->first()->toArray();
+        $data['cat_link'] = cat_nameTo_ink($data['cat_name']);
+        $modelDiffArr = model_filter_key($temps, $data);
+        foreach ($modelDiffArr as $key => $value) {
+            if (is_object($modelDiffArr[$key])) {
+                $modelDiffArr[$key] =  fileterUpload(Storage::putFile(self::path, $value), true);
+                Storage::delete(fileterUpload($temps[$key] . "/", false));
+            }
+        }
+        return $this->model::where('id', $id)->update($modelDiffArr);
+    }
+    public function delete($id)
+    {
+        $temps = $this->model::where('cat_id', $id)->first()->toArray();
+        // foreach ($temps as $value) {
+        //     if (strstr($value, "/") && (file_exists($value))) {
+        //         Storage::delete(fileterUpload($value . "/", false));
+        //     }
+        // }
+        // return $this->model::destroy($id);
+        return $temps;
+    }
+
+    private function custongetTree($tree_id, $top = 0)
+    {
+        $three_arr = [];
+        $count = Category::where('parent_id', $tree_id)->count();
+        if (0 < $count || $tree_id == 0) {
+            $res = Category::select('cat_id as id', 'cat_name', 'cat_icon', "cat_link", 'parent_id', 'sort_order', 'is_show', 'show_in_nav', 'is_top_show')->where('parent_id', $tree_id)->orderBy('sort_order', 'ASC')->orderBy('cat_id', 'ASC')->get()->toArray();
+            // return $res;
+
+            foreach ($res as $k => $row) {
+                $three_arr[$k]['id'] = $row['id'];
+                $three_arr[$k]['cat_name'] = $row['cat_name'];
+                $three_arr[$k]['cat_icon'] = $row['cat_icon'];
+                $three_arr[$k]['cat_link'] = $row['cat_link'];
+                $three_arr[$k]['sort_order'] = $row['sort_order'];
+                $three_arr[$k]['is_show'] = $row['is_show'];
+                $three_arr[$k]['show_in_nav'] = $row['show_in_nav'];
+                $three_arr[$k]['is_top_show'] = $row['show_in_nav'];
+                $three_arr[$k]['haschild'] = 0;
+                if (isset($row['id'])) {
+                    $child_tree = $this->custongetTree($row['id']);
+                    if ($child_tree) {
+                        $three_arr[$k]['children'] = $child_tree;
+                        $three_arr[$k]['haschild'] = 1;
+                    }
+                }
+            }
+            return $three_arr;
+        }
+        return $three_arr;
+    }
+    public function arr_foreach($arr)
+    {
+        $tmp = [];
+        if (!is_array($arr)) {
+            return false;
+        }
+        foreach ($arr as $val) {
+            if (is_array($val)) {
+                $tmp = array_merge($tmp, $this->arr_foreach($val));
+            } else {
+                $tmp[] = $val;
+            }
+        }
+    }
+    // public function getCategoryGetGoods($id)
+    // {
+    //     $arr = $this->getChildCategoryArr($id);
+    //     $goodsByCollection = DB::table('category_group as group')
+    //         ->join("goods", "group.handle", "=", "goods.handle")
+    //         ->select("group.*", "goods.goods_name", "goods.goods_name", "goods.shop_price", "goods.goods_name", "goods.goods_img", "goods.goods_desc_edior",)
+    //         ->whereIn("group.cat_link", $arr)
+    //         ->orderBy("goods_name", "asc")
+    //         ->get()->toArray();
+    //     return $goodsByCollection;
+    // }
+
+    public function catList($cat_id = 0)
+    {
+        $arr = [];
+        $count = Category::where('parent_id', $cat_id)->where('is_show', 1)->count();
+        if (0 < $count) {
+            $res = Category::select('cat_id', 'cat_name', 'cat_icon', 'parent_id', 'is_show')->where('parent_id', $cat_id)->where('is_show', 1)->orderBy('sort_order', 'ASC')->orderBy('cat_id', 'ASC')->get()->toArray();
+            if ($res === null) {
+                return [];
+            }
+            foreach ($res as $row) {
+                $arr[$row['cat_id']]['cat_id'] = $row['cat_id'];
+                if (isset($row['cat_id'])) {
+                    $child_tree = $this->catList($row['cat_id']);
+
+                    if ($child_tree) {
+                        $arr[$row['cat_id']]['child_tree'] = $child_tree;
+                    }
+                }
+            }
+            return $arr;
+        }
+    }
+
+    public function getChildCategoryArr($id)
+    {
+        $category_list = Cache::store('file')->get('category_list');
+        $arr[] = $id;
+        foreach ($category_list as $value) {
+            if ($value['cat_link'] === $id) {
+                if ($value['children']) {
+                    foreach ($value['children'] as $v) {
+                        $arr[] = $v['cat_link'];
+                        if (isset($v['children']) && count($v['children']) !== 0) {
+                            foreach ($v['children'] as $childValue) {
+                                $arr[] = $childValue['cat_link'];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return $arr;
+    }
+}

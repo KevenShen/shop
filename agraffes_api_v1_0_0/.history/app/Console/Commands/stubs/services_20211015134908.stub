@@ -1,0 +1,36 @@
+<?php
+namespace DummyNamespace;
+ 
+ 
+class DummyClass
+{
+    private $reposity;
+
+    /*
+    *    将需要使用的Reposity通过构造函数实例化
+    */
+    public function __construct ()
+    {
+        $this->model=;
+    }
+
+    public function all()
+	{
+		return array();
+	}
+
+	public function detail()
+	{
+		return array();
+	}
+
+    public function category($id)
+	{
+		return 'category';
+	}
+
+    public function show($id)
+	{
+		return 'show';
+	}
+}
