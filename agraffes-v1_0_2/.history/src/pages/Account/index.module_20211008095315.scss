@@ -1,0 +1,16 @@
+.site_main {
+    position: relative;
+    z-index: 500;
+    outline: 0;
+}
+.account_page {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    @media screen and (min-width: 1024px) {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
+.account_page_masthead {
+    text-align: center;
+}

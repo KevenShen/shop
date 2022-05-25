@@ -1,0 +1,25 @@
+.productgrid_sidebar {
+    width: 185px;
+}
+.productgrid--wrapper {
+    grid-area: product-items-wrapper;
+    width: 100%;
+}
+.productgrid_utils {
+    width: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.75rem;
+    background-color: #f6f6f6;
+    table-layout: fixed;
+}
+.productgrid_items{
+    margin-top: 1.75rem;
+    padding: 0;
+}
+.productitem{
+    margin: 20px 0 0;
+    border: 1px solid rgba(128,128,128,.16);
+    box-shadow: 0 1px 4px rgb(128 128 128 / 11%);
+    padding: 1rem;
+}

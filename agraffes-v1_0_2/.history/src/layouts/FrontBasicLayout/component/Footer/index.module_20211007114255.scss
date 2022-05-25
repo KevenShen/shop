@@ -1,0 +1,32 @@
+.site_footer_item {
+    max-width: 1500px;
+    padding-right: 10px;
+    padding-left: 10px;
+    @media screen and(min-width:1024px) {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+    @media screen and(min-width:720px) {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+.site-footer-wrapper{
+    color: seagreen;
+}
+.copyright {
+    @media screen and (min-width: 1024px) {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+    @media screen and (min-width: 720px) {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    max-width: 1500px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}

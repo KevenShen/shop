@@ -1,0 +1,95 @@
+.site_main {
+    z-index: 500;
+    outline: 0;
+}
+.account_page {
+    @media screen and (min-width: 1024px) {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.account_page_masthead {
+    @media screen and (min-width: 1024px) {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+    @media screen and (min-width: 720px) {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    // margin-top: 30px;
+    // margin-bottom: 30px;
+    // padding-right: 10px;
+    // padding-left: 10px;
+    // margin-right: auto;
+    // margin-left: auto;
+    text-align: center;
+}
+.account_page_content {
+    @media screen and (min-width: 1024px) {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+    @media screen and (min-width: 720px) {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    max-width: 500px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.form_field {
+    margin-bottom: 1.25rem;
+    position: relative;
+}
+.form_field_input {
+    width: 100%;
+    transition: all 125ms cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: "Libre Franklin", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--font-size-body);
+    z-index: 1;
+    // padding: 1.5rem 0.625rem 0.375rem;
+    color: #4d4d4d;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+.form_action_row {
+    margin-top: 1.25rem;
+    width: 150px;
+}
+.button_primary {
+    vertical-align: middle;
+    font-size: var(--font-size-button-small);
+    padding: 0.625rem 1rem;
+    letter-spacing: 0;
+    font-family: "Libre Franklin", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: width 125ms cubic-bezier(0.4, 0, 0.2, 1), height 125ms cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 125ms cubic-bezier(0.4, 0, 0.2, 1), background-color 125ms cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 125ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form_action_row_helper {
+    @media screen and (min-width: 720px) {
+        display: inline-block;
+        margin-top: 0;
+        margin-left: 20px;
+        vertical-align: middle;
+    }
+    margin-top: 1rem;
+}
+.form_action_row_helper_item {
+}

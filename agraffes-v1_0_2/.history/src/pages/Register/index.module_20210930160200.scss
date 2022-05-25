@@ -1,0 +1,95 @@
+.account_page {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: transparent;
+    @media screen and (min-width: 1024px) {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
+.account_page_masthead {
+    font-family: "Libre Franklin", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-width: 1500px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    @media screen and (min-width: 1024px) {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    @media screen and (min-width: 720px) {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+.account_page_title {
+    text-align: center;
+    font-family: Arimo, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.75em;
+    color: #4c4c4c;
+    @media screen and (min-width: 1024px) {
+        font-size: 1.875em;
+    }
+}
+
+.account_page_content {
+    @media screen and (min-width: 1024px) {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+    @media screen and (min-width: 720px) {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    max-width: 640px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.form_field {
+    @media screen and (min-width: 720px) {
+        width: calc(50% - 20px);
+        float: left;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    margin-bottom: 1.25rem;
+    position: relative;
+}
+.form_field_input {
+    width: 100%;
+    transition: all 125ms cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: "Libre Franklin", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--font-size-body);
+    z-index: 1;
+    width: 100%;
+    padding: 1.5rem 0.625rem 0.375rem;
+    color: #4d4d4d;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-family: sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}

@@ -1,0 +1,10 @@
+.globalSearchContainer {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    left: -1px;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 4px;
+    box-shadow: 0 2px 3px rgb(128 128 128 / 11%);
+    transition: border 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+}

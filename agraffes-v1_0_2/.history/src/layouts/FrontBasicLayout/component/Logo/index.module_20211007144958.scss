@@ -1,0 +1,18 @@
+.site_header_logo {
+    @media screen and (min-width: 1024px) {
+        display: inline-block;
+        height: auto;
+        margin-right: 25px;
+        margin-left: 0;
+        text-align: left;
+    }
+    @media screen and (min-width: 680px) {
+        flex: 0 0 auto;
+    }
+}
+.logo {
+    img {
+        width: 60px;
+        height: 60px;
+    }
+}

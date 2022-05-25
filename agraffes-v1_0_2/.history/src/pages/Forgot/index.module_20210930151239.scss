@@ -1,0 +1,21 @@
+.account-page {
+    @media screen and (min-width: 1024px) {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.account_page_masthead {
+    @media screen and (min-width: 1024px) {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    @media screen and (min-width: 720px) {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

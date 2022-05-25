@@ -1,0 +1,81 @@
+import React from 'react';
+import { ResponsiveGrid, Menu } from '@alifd/next';
+import styles from './index.module.scss';
+const { Item, SubMenu } = Menu
+
+const dataSource = {}
+const { Cell } = ResponsiveGrid;
+function Category() {
+  return (
+    <ResponsiveGrid gap={50}>
+      <Cell colSpan={12}>
+        <Menu
+          direction="hoz"
+          mode="popup"
+          popupAutoWidth
+          triggerType="hover"
+          className={styles.categoryMenu}
+        >
+          <Item key="1" className={styles.item}>New Arrivals</Item>
+          <Item key="2">New Arrivals</Item>
+          <SubMenu label="New Arrivals">
+            <Item key="sub-12">New Arrivals</Item>
+            <Item key="sub-22">New Arrivals</Item>
+          </SubMenu>
+          <SubMenu label="New Arrivals">
+            <Item key="sub-1">New Arrivals</Item>
+            <Item key="sub-2">New Arrivals</Item>
+          </SubMenu>
+          <Item key="3">New Arrivals</Item>
+          <Item key="1">New Arrivals</Item>
+          <Item key="2">New Arrivals</Item>
+          <SubMenu label="New Arrivals">
+            <Item key="sub-12">New Arrivals</Item>
+            <Item key="sub-22">New Arrivals</Item>
+          </SubMenu>
+          <SubMenu label="New Arrivals">
+            <Item key="sub-1">New Arrivals</Item>
+            <Item key="sub-2">New Arrivals</Item>
+          </SubMenu>
+          <Item key="3">New Arrivals</Item>
+          <Item key="1">New Arrivals</Item>
+          <Item key="2">New Arrivals</Item>
+          <SubMenu label="New Arrivals">
+            <Item key="sub-12">New Arrivals</Item>
+            <Item key="sub-22">New Arrivals</Item>
+          </SubMenu>
+          <SubMenu label="New Arrivals">
+            <Item key="sub-1">New Arrivals</Item>
+            <Item key="sub-2">New Arrivals</Item>
+          </SubMenu>
+          <Item key="3">New Arrivals</Item>
+          <Item key="1">New Arrivals</Item>
+          <Item key="2">New Arrivals</Item>
+          <SubMenu label="New Arrivals">
+            <Item key="sub-12">New Arrivals</Item>
+            <Item key="sub-22">New Arrivals</Item>
+          </SubMenu>
+          <SubMenu label="New Arrivals">
+            <Item key="sub-1">New Arrivals</Item>
+            <Item key="sub-2">New Arrivals</Item>
+          </SubMenu>
+          <Item key="3">New Arrivals</Item>
+          <Item key="1">New Arrivals</Item>
+          <Item key="2">New Arrivals</Item>
+          <SubMenu label="New Arrivals">
+            <Item key="sub-12">New Arrivals</Item>
+            <Item key="sub-22">New Arrivals</Item>
+          </SubMenu>
+          <SubMenu label="New Arrivals">
+            <Item key="sub-1">New Arrivals</Item>
+            <Item key="sub-2">New Arrivals</Item>
+          </SubMenu>
+          <Item key="3">New Arrivals</Item>
+        </Menu>
+      </Cell>
+    </ResponsiveGrid>
+
+  );
+}
+
+export default Category;

@@ -1,0 +1,32 @@
+.site_header_logo {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    vertical-align: middle;
+    @media screen and (min-width: 1024px) {
+        display: inline-block;
+        height: auto;
+        margin-right: 25px;
+        margin-left: 0;
+        text-align: left;
+    }
+    @media screen and (min-width: 680px) {
+        flex: 0 0 auto;
+        margin: 0 1rem 0 calc(1rem-0.625rem);
+    }
+}
+.site_logo {
+    display: block;
+    text-decoration: none;
+    @media screen and (min-width: 1024px) {
+        display: inline-block;
+        margin-left: 0;
+    }
+    @media screen and (min-width: 680px) {
+        max-height: none;
+    }
+}
+.site_log_image {
+    width: 60px;
+    height: 60px;
+}

@@ -1,0 +1,70 @@
+.featured_collection_container {
+    // position: relative;
+    // text-align: center;
+    padding-right: 25px;
+    padding-left: 25px;
+    max-width: 1500px;
+    margin-right: auto;
+    margin-left: auto;
+    .featured_collection_content {
+        cursor: grab;
+        margin-top: 1.75rem;
+        padding: 0;
+        text-align: initial;
+        outline: 0;
+        @media screen and (min-width: 860px) {
+            margin-top: 1.75rem;
+        }
+    }
+}
+.productitem_emphasis {
+    margin-right: 20px;
+    width: calc(100% / 5 - 16px);
+}
+.productitem {
+    @media screen and (min-width: 860px) {
+        padding: 1rem;
+    }
+    // width: 100%;
+    // min-height: 100%;
+    // height: var(--base-height, auto);
+    // padding: 0.6875rem;
+    // background: #fff;
+    border: 1px solid rgba(128, 128, 128, 0.16);
+    box-shadow: 0 1px 4px rgb(128 128 128 / 11%);
+}
+
+.productitem_image_link {
+    margin: 0;
+    img {
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 40px;
+        margin-inline-end: 40px;
+    }
+}
+
+.productitem_info {
+    position: relative;
+    z-index: 100;
+    background-color: #fff;
+}
+
+.productitem_price {
+    color: #0076de;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 1.375rem;
+}
+.productitem_title {
+    margin-top: 0.25rem;
+    font-family: "Libre Franklin", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--font-size-body);
+    margin: 0.625rem 0 0;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: normal;
+}

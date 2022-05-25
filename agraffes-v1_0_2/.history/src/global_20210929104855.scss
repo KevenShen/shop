@@ -1,0 +1,12 @@
+// 引入默认全局样式
+@import "@alifd/next/reset.scss";
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Libre Franklin", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--font-size-body);
+  width: 100%;
+  color: #4c5154;
+}

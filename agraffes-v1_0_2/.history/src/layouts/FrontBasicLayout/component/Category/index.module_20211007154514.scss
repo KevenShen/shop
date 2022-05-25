@@ -1,0 +1,17 @@
+// .site-navigation {
+//     display: flex;
+//     background-color: #1d2236;
+// }
+.site_navigation{
+    background-color: rgb(29,34,54);
+    @media screen and (min-width:1024px) {
+        padding-right: 25px;
+        padding-left: 25px;
+
+    }
+    @media screen and (min-width:720px) {
+        padding-right: 15px;
+        padding-left: 15px;
+        
+    }
+}

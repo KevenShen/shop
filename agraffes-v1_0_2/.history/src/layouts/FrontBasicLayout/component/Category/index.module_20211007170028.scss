@@ -1,0 +1,42 @@
+// .site-navigation {
+//     display: flex;
+//     background-color: #1d2236;
+// }
+.site_navigation {
+    background-color: rgb(29, 34, 54);
+    max-width: 1280px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: 10px auto;
+    @media screen and (min-width: 1024px) {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+    @media screen and (min-width: 720px) {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+.navmenu {
+    display: inline-block;
+    color: #fff;
+    flex: 1 1 auto;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: rgb(29, 34, 54);
+    border: none;
+}
+.navmenu_item {
+    color: #fff;
+    width: auto;
+    background-color: rgb(29, 34, 54);
+    font-weight: bold;
+    font-size: 1.2rem;
+    
+}
+.item1{
+    color: #fff;
+    background-color: #fff;
+    font-weight: bold;
+}

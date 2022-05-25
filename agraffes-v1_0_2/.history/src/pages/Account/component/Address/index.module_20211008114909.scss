@@ -1,0 +1,11 @@
+.site_main {
+    position: relative;
+    z-index: 500;
+    outline: 0;
+}
+.account_page_addresse {
+    @media screen and (min-width: 1024px) {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}

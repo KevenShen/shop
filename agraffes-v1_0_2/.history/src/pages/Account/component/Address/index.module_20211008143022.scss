@@ -1,0 +1,98 @@
+.site_main {
+    position: relative;
+    z-index: 500;
+    outline: 0;
+}
+.account_page_addresse {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    @media screen and (min-width: 1024px) {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
+.account_page_masthead {
+    text-align: center;
+    max-width: 1500px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    @media screen and (min-width: 1024px) {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
+.account_page_title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.75;
+    color: #4c4c4c;
+    @media screen and (min-width: 1024px) {
+        font-size: 1.875rem;
+    }
+}
+.account_page_content {
+    max-width: 1500px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    @media screen and (min-width: 1024px) {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+    @media screen and (min-width: 720px) {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+.account_page_two_column {
+}
+.account_page_column_half {
+    width: 50%;
+    margin-top: 3.125rem;
+}
+.account_page_subtitle {
+    font-size: 1.125rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #4c4c4c;
+}
+.account_address_wrapper {
+    padding-left: 0;
+    justify-content: flex-start;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.account_address {
+    margin-top: 0;
+    margin-right: 20px;
+    font-size: 1rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 100%;
+    padding: 1.25rem;
+    border: 1px solid rgba(128, 128, 128, 0.16);
+    box-shadow: 0 1px 4px rgb(128 128 128 / 11%);
+}
+.account_address_list {
+    padding-left: 0;
+}
+.account_address_item_default {
+    font-style: italic;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.account_address_list_footer {
+    margin-top: calc(1.25rem / 2);
+}
+.button_primary {
+    --mdc-ripple-fg-size: 36px;
+    --mdc-ripple-fg-scale: 2.2848;
+    --mdc-ripple-fg-translate-start: 33px, -2px;
+    --mdc-ripple-fg-translate-end: 12.7266px, 1px;
+}

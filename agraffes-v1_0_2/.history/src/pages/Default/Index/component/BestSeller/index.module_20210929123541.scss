@@ -1,0 +1,12 @@
+.bestSeller {
+    padding-right: 25px;
+    padding-left: 25px;
+}
+.home-section--title {
+    @media screen and (min-width: 1024px) {
+        margin-top: 4.25rem;
+    }
+    @media screen and (min-width: 860px) {
+        margin-bottom: 1.75rem;
+    }
+}

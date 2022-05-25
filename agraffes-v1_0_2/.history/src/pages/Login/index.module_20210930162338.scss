@@ -1,0 +1,39 @@
+.site_main {
+    position: relative;
+    z-index: 500;
+    outline: 0;
+}
+.account_page {
+    @media screen and (min-width: 1024px) {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.account_page_masthead {
+    @media screen and (min-width: 1024px) {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+    @media screen and (min-width: 720px) {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+.account_page_content {
+    @media screen and (min-width: 1024px) {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    max-width: 500px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

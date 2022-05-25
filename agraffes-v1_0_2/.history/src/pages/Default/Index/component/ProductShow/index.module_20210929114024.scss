@@ -1,0 +1,16 @@
+.featured_collection_container {
+    position: relative;
+    text-align: center;
+    padding-right: 25px;
+    padding-left: 25px;
+    max-width: 1500px;
+    margin-right: auto;
+    margin-left: auto;
+    .featured_collection_content {
+        cursor: grab;
+        margin-top: 1.75rem;
+        @media screen and (min-width: 860px) {
+            margin-top: 1.75rem;
+        }
+    }
+}

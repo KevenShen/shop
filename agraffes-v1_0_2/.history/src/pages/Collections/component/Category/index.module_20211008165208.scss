@@ -1,0 +1,101 @@
+.productgrid_sidebar {
+    width: 185px;
+}
+.productgrid--wrapper {
+    grid-area: product-items-wrapper;
+    width: 100%;
+}
+.productgrid_utils {
+    width: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.75rem;
+    background-color: #f6f6f6;
+    table-layout: fixed;
+}
+.productgrid_items {
+    margin-top: 1.75rem;
+    padding: 0;
+}
+.productitem {
+    margin: 20px 0 0;
+    border: 1px solid rgba(128, 128, 128, 0.16);
+    box-shadow: 0 1px 4px rgb(128 128 128 / 11%);
+    padding: 1rem;
+    background: #fff;
+    transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.productitem_image_link {
+    width: 25%;
+    margin: 0 0.25rem;
+}
+.productitem_image {
+}
+.productitem_info {
+    margin: 0 0 0 25px;
+    background-color: #fff;
+    @media screen and (min-width: 860px) {
+        width: 50%;
+        margin: 0 50px 0 25px;
+    }
+}
+.productitem_title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #4c4c4c;
+    margin-top: 0.25rem;
+    line-height: 1.3125;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: normal;
+    text-transform: none;
+}
+.productitem_description {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #4c5154;
+}
+.productitem_link {
+    color: #0076de;
+    text-decoration: none;
+    transition: color 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    line-height: 1.5;
+}
+.productitem_actions {
+    max-width: 300px;
+    margin-top: 0.5rem;
+    padding-left: 25px;
+    opacity: 1;
+    visibility: visible;
+    text-align: center;
+}
+.productitem_listview_price {
+    margin-bottom: 20px;
+    text-align: right;
+}
+.productitem_price{
+    margin-top: 0.25rem;
+    visibility: visible;
+}
+.price_main{
+    margin-top: .125rem;
+    font-size: 1.375rem;
+    color: #0076de;
+    line-height: 1.4375rem;
+    margin-right: .25rem;
+}
+.price_label{
+    font-size: 1.125rem;
+}
+.money{
+    padding-left: 5px;
+}
+.quickshop_button{
+    width: 100%;
+    margin-top: .5rem;
+    margin-right: 0;
+    padding: 0;
+    padding-right: .25rem;
+    padding-left: .25rem;
+}
